@@ -1,0 +1,90 @@
+---
+name: Button
+menu: Components
+---
+
+import styled from 'styled-components'
+import { Playground, PropsTable } from 'docz'
+import { Download, Home } from 'react-feather'
+
+import { Colors } from '../../src/themes'
+import { Button, Row } from '../../src/components'
+
+# Button
+
+## Basic Examples
+
+A simple button that is customizble to your requirements. 
+
+<Playground>
+  <Row justify='flex-start'>
+    <Button 
+      margin='0 20px 0 0' 
+      text='Click Me' 
+    />
+    <Button
+      margin='0 20px 0 0'  
+      icon={<Download color="white" size={20} />} 
+      text='Download' 
+    />
+    <Button 
+      icon={<Home color="white" size={20} />} 
+    />
+  </Row>
+</Playground>
+
+## Outline Button
+
+<Playground>
+  <Button text='Click Me' outline color={Colors.blue} />
+</Playground>
+
+## Icon Button
+
+In order to render a button which includes an icon, simply pass the icon element you with to render with the `icon` prop. You can also customize the position of the icon with the `iconPos` prop.
+
+<Playground>
+  <Button 
+    icon={<Download color="white" size={20} />} 
+    text='Download' 
+    bg={Colors.success} 
+  />
+</Playground>
+
+## Custom Width
+
+By default the `Button` component is set to a minimum width of `120px` with an automatic width. If you would like to pass a custom width, you can use the `width` prop.
+
+<Playground>
+  <Row>
+    <Button width='30%' text='Click Me' bg={Colors.blue} />
+    <Button width='30%' text='Success' bg={Colors.success} />
+    <Button width='30%' text='Error'  bg={Colors.error} />
+  </Row> 
+</Playground>
+
+## Different Sizes
+
+There are 3 pre-defined sizes for the `Button` component, pass either `sm`, `md`, or `lg` to the size prop to resize the buttons.
+
+<Playground>
+  <Row>
+    <Button size='sm' width='30%' text='Click Me' bg={Colors.blue} />
+    <Button size='md' width='30%' text='Click Me' bg={Colors.blue} />
+    <Button size='lg' width='30%' text='Click Me' bg={Colors.blue} />
+  </Row> 
+</Playground>
+
+## Minimal Buttons
+
+<Playground>
+  <Row justify='flex-start'>
+    <Button margin='0 20px 0 0' minimal text='Default' color={Colors.blue} />
+    <Button margin='0 20px 0 0' minimal text='Success' color={Colors.success} />
+    <Button margin='0 20px 0 0' minimal text='Error' color={Colors.error} />
+  </Row> 
+</Playground>
+
+## Props
+
+<PropsTable of={Button} />

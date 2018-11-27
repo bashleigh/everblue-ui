@@ -1,0 +1,54 @@
+{
+  "name": "everblue-ui",
+  "version": "0.1.0",
+  "description": "A user friendly, open source component library built using React & styled-components.",
+  "main": "dist/index.js",
+  "scripts": {
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "rm -rf ./dist && npm run transpile",
+    "transpile": "babel src/components --ignore */stories -d dist --copy-files",
+    "transpile:watch": "babel src/components -w -d dist",
+    "lint": "eslint src/components/**; exit 0"
+  },
+  "author": "SovTech",
+  "license": "MIT",
+  "dependencies": {
+    "styled-system": "^3.1.11"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-spring": ">= 6",
+    "styled-components": ">= 4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^4.0.2",
+    "@storybook/addon-info": "^4.0.2",
+    "@storybook/addon-storyshots": "^4.0.4",
+    "@storybook/react": "^4.0.2",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-styled-components": "^1.8.0",
+    "docz": "^0.12.9",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-feather": "^1.1.4",
+    "react-lottie": "^1.2.3",
+    "react-spring": "^6.1.8",
+    "react-test-renderer": "^16.6.0",
+    "rollup": "^0.67.3",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "style-loader": "^0.23.1",
+    "styled-components": "^4.0.3"
+  }
+}

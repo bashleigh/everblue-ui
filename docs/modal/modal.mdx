@@ -1,0 +1,127 @@
+---
+name: Modal
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz'
+import styled from 'styled-components'
+
+import { Colors } from '../../src/themes'
+import { Download } from 'react-feather'
+import { Modal, Row } from '../../src/components'
+import { 
+  ModalDemo, 
+  CustomModalDemo, 
+  WithActionsDemo 
+} from '../../src/examples/modal'
+
+
+# Modal
+
+**A full screen animated modal with centered content to add lightboxes, user notifications or your own custom content**
+
+## Basic Example
+
+This is the default modal. A simple component used to display information to the user.
+
+<ModalDemo />
+
+```
+render() {
+  const { showModal } = this.state;
+  return (
+    <Fragment>
+      <Button
+        onClick={() =>
+          this.setState({
+            showModal: true
+          })
+        }
+        text="Show Default Modal"
+      />
+      <Modal
+        heading="This is the default modal"
+        open={showModal}
+        onClose={this._callBack}
+      />
+    </Fragment>
+  );
+}
+```
+
+## Custom Content
+
+If you would like to render your own custom content inside the modal, simply render your custom content as a child of the `Modal` component and it will handle the rest.
+
+<CustomModalDemo />
+
+```
+render() {
+  const { showModal } = this.state;
+  return (
+    <Fragment>
+      <Button
+        onClick={() =>
+          this.setState({
+            showModal: true
+          })
+        }
+        text="Show Custom Modal"
+      />
+      <Modal open={showModal} onClose={this._callBack}>
+        <Content>
+          <H4>Here's a nice modal!</H4>
+          <H4>With some custom content :)</H4>
+        </Content>
+      </Modal>
+    </Fragment>
+  );
+}
+```
+
+## With Actions
+
+If you would like to add your own custom actions to the footer of the `Modal` component, simply pass your action(s) as an element to the modal component using the `actions` prop. 
+
+<WithActionsDemo />
+
+```
+const Actions = (
+  <Fragment>
+    <Button
+      margin="0 10px 0 0"
+      outline
+      color={Colors.blue}
+      text="Undo"
+    />
+    <Button text="Submit" />
+  </Fragment>
+);
+
+render() {
+  const { showModal } = this.state;
+  return (
+    <Fragment>
+      <Button
+        onClick={() =>
+          this.setState({
+            showModal: true
+          })
+        }
+        text="Show Modal with Actions"
+      />
+      <Modal
+        heading="A modal with actions"
+        open={showModal}
+        actions={Actions}
+        onClose={this._callBack}
+      />
+    </Fragment>
+  );
+}
+```
+
+## API
+
+<PropsTable of={Modal} />
+

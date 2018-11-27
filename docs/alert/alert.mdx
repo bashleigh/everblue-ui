@@ -1,0 +1,86 @@
+---
+name: Alert
+menu: Components
+order: 2
+---
+
+import styled from 'styled-components'
+import { Download } from 'react-feather'
+import { Playground, PropsTable } from 'docz'
+import { Colors } from '../../src/themes'
+import { Alert, Row } from '../../src/components'
+import { 
+  AlertDemo, 
+  CustomAlertDemo, 
+  AlertActionsDemo 
+} from '../../src/examples/alert'
+
+
+# Alert
+
+**Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.**
+
+## Basic Example
+
+The `Alert` component functions similarly to that of a Snackbar. Only one `Alert` component can be shown at a time, it accepts a variety of different props allowing you to customize it to your needs.
+
+<AlertDemo />
+
+```
+render() {
+  const { showAlert } = this.state;
+  return (
+    <Fragment>
+      <Button
+        onClick={() =>
+          this.setState({
+            showAlert: true,
+            showActionAlert: false,
+            showCustomAlert: false
+          })
+        }
+        text="Show Alert"
+      />
+      <Alert open={showAlert} onClose={this._callBack} duration={5000} />
+    </Fragment>
+  );
+}
+```  
+
+## With Actions
+
+If you would like to include some actions inside the `Alert`, you can do so by passing your action(s) using the `action` prop.
+
+<AlertActionsDemo />
+
+```
+render() {
+  const { showActionAlert } = this.state;
+  return (
+    <Fragment>
+      <Button
+        onClick={() =>
+          this.setState({
+            showActionAlert: true,
+            showAlert: false,
+            showCustomAlert: false
+          })
+        }
+        text="Show Alert w/ Action"
+      />
+      <Alert
+        open={showActionAlert}
+        action={<Button margin="15px 0 0 0" text="Action" size="sm" />}
+        autoClose={false}
+        onClose={this._callBack}
+        text="Need to add a button? Just use the action prop!"
+        duration={3500}
+      />
+    </Fragment>
+  );
+}
+```
+
+## Props
+
+<PropsTable of={Alert} />

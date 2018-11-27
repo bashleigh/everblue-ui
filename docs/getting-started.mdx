@@ -1,0 +1,70 @@
+---
+name: Getting Started
+route: /getting-started
+order: -1
+---
+
+# Getting Started
+
+### Theming
+
+Everblue provides a set of pre-styled, polished React components that are ready to use out the box. However, when tasked with building modern web applications \n
+nowadays, the idea of consitency throughout your app's UI is essential. In light of this we have adopted the `styled-system` theming engine - which makes this a breeze.
+
+Please have a look through the `styled-system` docs for more detailed info on the API, but to get set up simply follow the steps below:
+
+#### 1. Create a Theme
+
+In `src` folder of your project, create a new Themes folder. 
+
+In here create a themes file, for the sake of this example we will call it `theme.js`.
+
+You can now customize your theme to suit your requirements, as a reference point you should end up with something like this:
+
+```
+export default theme = {
+  fontSizes: [14, 16, 24, 32, 48, 64, 96, 128],
+  space: [0, 5, 10, 20, 40, 60],
+  fontFamily: "Hind",
+  colors: {
+    blue: "#3578EA",
+    error: "rgba(200, 0, 0, 0.8)",
+    success: "#16a085",
+    white: "#FFFFFF",
+    offWhite: "#f9f9f9",
+    grayExtraLight: "#EEF1F5",
+    semiBlack: "#313131eb",
+    grayLight: "#CED4DE",
+    gray: "#7D899C",
+    grayDark: "#2D3747",
+    grayExtraDark: "#1D2330",
+    dark: "#13161F",
+    skyBlue: "#1FB6FF"
+  }
+};
+```
+
+#### 2. Reference your theme using ThemeProvider
+
+Once you've created your theme, you need to allow your app to access these values. This is done via `styled-components`' `ThemeProvider` component. 
+
+If using `create-react-app`, edit your `index.js` file so it resembles the following:
+
+```
+import React from "react";
+import ReactDOM from "react-dom";
+import { ThemeProvider } from "styled-components";
+
+import "./index.css";
+import App from "./App";
+import { theme } from "./Themes";
+import registerServiceWorker from "./registerServiceWorker";
+
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>,
+  document.getElementById("root")
+);
+registerServiceWorker();
+```
