@@ -8,11 +8,11 @@ const Actions = (
       margin="0 10px 0 0"
       uppercase
       outline
-      size="small"
+      size="sm"
       color={Colors.blue}
       text="Undo"
     />
-    <Button uppercase size="small" text="Submit" />
+    <Button uppercase size="sm" text="Submit" />
   </Fragment>
 );
 
@@ -45,6 +45,7 @@ class WithActionsDemo extends Component {
         />
         <Modal
           heading="A modal with actions"
+          onClose={this._callBack}
           open={showModal}
           actions={Actions}
         />

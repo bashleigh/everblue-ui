@@ -11,4 +11,5 @@ export default styled.h4`
   font-style: ${props => props.fontStyle || "normal"};
   font-weight: ${props => props.fontWeight || 300};
   ${FluidType("18px", "26px", "320px", "1200px")};
+  font-family: ${props => console.log(props.theme)};
 `;

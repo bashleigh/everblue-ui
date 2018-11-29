@@ -1,4 +1,4 @@
-import AlertDemo from "./AlertActionDemo";
+import AlertDemo from "./AlertDemo";
 import CustomAlertDemo from "./CustomAlertDemo";
 import AlertActionsDemo from "./AlertActionDemo";
 

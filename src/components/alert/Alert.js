@@ -50,6 +50,7 @@ class Alert extends Component {
     const { action, text, color, icon, style, open } = this.props;
     return (
       <Transition
+        items={open}
         native
         config={config.gentle}
         from={{
@@ -66,33 +67,25 @@ class Alert extends Component {
           pointerEvents: "none"
         }}
       >
-        {open
-          ? ({ translateY, ...rest }) => (
-              <StyledAlert
-                {...this.props}
-                style={{
-                  transform: translateY.interpolate(
-                    x => `translate3d(0,${x},0)`
-                  ),
-                  ...style,
-                  ...rest
-                }}
-              >
-                <Row>
-                  {icon && this._renderIcon(icon)}
-                  <TextCont>
-                    <P>{text}</P>
-                  </TextCont>
-                  <CloseIcon onClick={() => this._handleClose()} />
+        {open =>
+          open &&
+          (props => (
+            <StyledAlert {...this.props} style={props}>
+              <Row>
+                {icon && this._renderIcon(icon)}
+                <TextCont>
+                  <P>{text}</P>
+                </TextCont>
+                <CloseIcon onClick={() => this._handleClose()} />
+              </Row>
+              {action && (
+                <Row color={color} actionRow>
+                  {this._renderAction(action)}
                 </Row>
-                {action && (
-                  <Row color={color} actionRow>
-                    {this._renderAction(action)}
-                  </Row>
-                )}
-              </StyledAlert>
-            )
-          : () => null}
+              )}
+            </StyledAlert>
+          ))
+        }
       </Transition>
     );
   }
@@ -104,7 +97,8 @@ Alert.defaultProps = {
   color: "#FFF",
   onClose: () => {},
   autoClose: true,
-  duration: 3500
+  duration: 3500,
+  open: true
 };
 
 Alert.propTypes = {

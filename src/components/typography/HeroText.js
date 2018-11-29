@@ -11,13 +11,10 @@ export default styled.h1`
   text-align: ${props => props.align || "left"};
   ${FluidType("49px", "70px", "320px", "1200px")};
   font-style: ${props => props.fontStyle || "normal"};
-  &:before {
-    position: absolute;
-    content: "";
-    bottom: 5%;
-    left: 0;
-    width: 35%;
-    height: 2px;
-    background: ${props => props.bg || "#3578EA"};
-  }
+  font-family: ${props =>
+    props.theme.fontFamily
+      ? props.theme.fontFamily
+      : props.customFont
+        ? props.customFont
+        : "Arial"};
 `;

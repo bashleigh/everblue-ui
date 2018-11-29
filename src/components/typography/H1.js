@@ -3,10 +3,6 @@ import { space, color } from "styled-system";
 
 import { FluidType } from "./FluidType";
 
-const getSizes = props => {
-  return { color: props.color };
-};
-
 export default styled.h1`
   ${space};
   ${color};
@@ -14,4 +10,10 @@ export default styled.h1`
   text-align: ${props => props.align || "left"};
   ${FluidType("29px", "42px", "320px", "1200px")};
   font-style: ${props => props.fontStyle || "normal"};
+  font-family: ${props =>
+    props.theme.fontFamily
+      ? props.theme.fontFamily
+      : props.customFont
+        ? props.customFont
+        : "Arial"};
 `;

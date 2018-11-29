@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import {
   width,
+  maxWidth,
+  height,
   space,
   fontSize,
   color,
@@ -13,6 +15,7 @@ import {
 } from "styled-system";
 
 const Box = styled.div`
+  ${height};
   ${width};
   ${space};
   ${fontSize};
@@ -24,6 +27,8 @@ const Box = styled.div`
   ${order};
   ${alignSelf};
   display: flex;
+  ${props => (props.maxWidth ? maxWidth : `max-width: 100%`)};
+  box-sizing: border-box;
 `;
 
 export default Box;

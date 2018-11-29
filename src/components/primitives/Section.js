@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { width, color, space } from "styled-system";
+import { width, height, color, space } from "styled-system";
 
 export default styled.section`
   ${width};
   ${color};
   ${space};
+  ${height};
   display: flex;
   position: relative;
   z-index: 20;

@@ -28,7 +28,7 @@ const Actions = (
       color={Colors.blue}
       text="Undo"
     />
-    <Button uppercase size="small" text="Submit" />
+    <Button uppercase size="sm" text="Submit" />
   </div>
 );
 

@@ -1,12 +1,10 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { space, width, color } from "styled-system";
+
+import { Text } from "../";
 
 const StyledButton = styled.button`
-  ${space};
-  ${width};
-  ${color};
   background: ${props =>
     props.outline || props.minimal ? "transparent" : props.bg};
   display: flex;
@@ -36,7 +34,6 @@ const StyledButton = styled.button`
     background: ${props => props.minimal && "rgba(50,50,93,0.05)"};
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: ${props => props.hover && "translateY(-1px)"};
-    cursor: pointer;
   }
   &:disabled {
     opacity: 0.7;
@@ -48,15 +45,10 @@ const ButtonText = styled.span`
   text-transform: ${props => (props.uppercase ? "uppercase" : "none")}
   font-weight: 500;
   text-decoration: none;
+  font-family: ${props => props.theme.fontFamily};
   font-size: 15px;
   z-index: 10;
   letter-spacing: .025em;
-  font-family: ${props =>
-    props.theme.fontFamily
-      ? props.theme.fontFamily
-      : props.customFont
-        ? props.customFont
-        : "Arial"};
 `;
 
 class Button extends Component {

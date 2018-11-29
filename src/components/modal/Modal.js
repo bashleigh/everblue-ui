@@ -13,9 +13,9 @@ import {
 import { H5, P } from "../";
 
 const MODAL_ANIM_CONFIG = {
-  duration: 500,
-  tension: 200,
-  friction: 25
+  duration: 250,
+  tension: 100,
+  friction: 10
 };
 
 class Modal extends Component {
@@ -59,6 +59,7 @@ class Modal extends Component {
     const hasChildren = !!children;
     return (
       <Transition
+        items={open}
         native
         config={MODAL_ANIM_CONFIG}
         from={{
@@ -75,27 +76,24 @@ class Modal extends Component {
           pointerEvents: "none"
         }}
       >
-        {open
-          ? ({ translateY, ...rest }) => (
-              <ModalWrap
+        {open =>
+          open &&
+          (props => (
+            <ModalWrap style={{ opacity: props.opacity }}>
+              <ModalInner
+                haschildren={hasChildren}
                 style={{
-                  ...rest
+                  transform: props.translateY.interpolate(
+                    x => `translate3d(0,${x},0)`
+                  ),
+                  opacity: props.opacity
                 }}
               >
-                <ModalInner
-                  haschildren={hasChildren}
-                  style={{
-                    transform: translateY.interpolate(
-                      x => `translate3d(0,${x},0)`
-                    ),
-                    ...rest
-                  }}
-                >
-                  {this._renderContent()}
-                </ModalInner>
-              </ModalWrap>
-            )
-          : () => null}
+                {this._renderContent()}
+              </ModalInner>
+            </ModalWrap>
+          ))
+        }
       </Transition>
     );
   }

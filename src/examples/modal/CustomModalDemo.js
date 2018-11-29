@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import { Button, Modal } from "../../components";
-import { H4, P } from "../../components/typography";
+import { H5, H4 } from "../../components/typography";
 
 const Content = styled.div`
   width: 300px;
@@ -42,7 +42,7 @@ class CustomModalDemo extends Component {
         <Modal open={showModal} onClose={this._callBack} duration={5000}>
           <Content>
             <H4>Here's a nice modal!</H4>
-            <H4>With some custom content :)</H4>
+            <H5>With some custom content :)</H5>
           </Content>
         </Modal>
       </Fragment>

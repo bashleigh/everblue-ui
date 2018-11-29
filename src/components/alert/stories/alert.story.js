@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { Alert, Button } from "../";
+import { Alert, Button } from "../../";
 import {
   AlertDemo,
   AlertActionsDemo,
