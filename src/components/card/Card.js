@@ -5,6 +5,7 @@ import Box from "../primitives/Box";
 
 const StyledBox = styled(Box)`
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
   &:hover {
     cursor: pointer;
     transform: translateY(-2px);

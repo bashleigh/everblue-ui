@@ -25,9 +25,6 @@ const AnimatedDiv = styled(animated.div)`
   box-sizing: border-box;
   max-width: 100%;
   width: auto;
-  @media screen and (max-width: 768px) {
-    padding: 20px;
-  }
 `;
 
 export default ({ children, style, delay, customConfig }) => {
