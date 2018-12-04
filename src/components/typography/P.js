@@ -15,8 +15,8 @@ export default styled.p`
     props.theme.fontFamily
       ? props.theme.fontFamily
       : props.customFont
-        ? props.customFont
-        : "Arial"};
+      ? props.customFont
+      : "Arial"};
   &:hover {
     cursor: ${props => props.hover && "pointer"};
   }

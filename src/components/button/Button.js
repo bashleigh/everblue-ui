@@ -55,8 +55,8 @@ const ButtonText = styled.span`
     props.theme.fontFamily
       ? props.theme.fontFamily
       : props.customFont
-        ? props.customFont
-        : "Arial"};
+      ? props.customFont
+      : "Arial"};
 `;
 
 class Button extends Component {

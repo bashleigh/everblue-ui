@@ -1,15 +1,28 @@
 import styled from "styled-components";
 import { FluidType } from "./FluidType";
-import { space, color } from "styled-system";
+import { space, color, fontWeight, fontStyle, textAlign } from "styled-system";
 
-export default styled.h4`
+const H4 = styled.h4`
   ${space};
   ${color};
-  text-align: ${props => props.align || "left"};
-  color: ${props => props.color};
-  margin: ${props => props.margin || 0};
-  font-style: ${props => props.fontStyle || "normal"};
-  font-weight: ${props => props.fontWeight || 300};
-  ${FluidType("18px", "26px", "320px", "1200px")};
-  font-family: ${props => console.log(props.theme)};
+  ${fontStyle};
+  ${textAlign};
+  ${fontWeight};
+  ${FluidType("19px", "20px", "320px", "1200px")};
+  font-family: ${props =>
+    props.theme.fontFamily
+      ? props.theme.fontFamily
+      : props.customFont
+      ? props.customFont
+      : "Arial"};
 `;
+
+H4.defaultProps = {
+  m: "0px",
+  color: "#1b1b1b",
+  fontStyle: "normal",
+  textAlign: "left",
+  fontWeight: "regular"
+};
+
+export default H4;

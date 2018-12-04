@@ -1,41 +1,76 @@
 import styled from "styled-components";
 import {
-  width,
-  maxWidth,
-  height,
-  space,
-  fontSize,
-  color,
   flex,
-  justifyContent,
-  alignItems,
-  flexDirection,
   order,
-  alignSelf
+  color,
+  space,
+  width,
+  zIndex,
+  height,
+  display,
+  maxWidth,
+  position,
+  fontSize,
+  flexWrap,
+  boxShadow,
+  alignSelf,
+  minHeight,
+  alignItems,
+  borderRadius,
+  flexDirection,
+  justifyContent
 } from "styled-system";
 
 const Box = styled.div`
-  ${height};
-  ${width};
-  ${space};
-  ${fontSize};
-  ${color};
   ${flex};
-  ${justifyContent};
-  ${alignItems};
-  ${flexDirection};
+  ${space};
+  ${color};
   ${order};
+  ${width};
+  ${zIndex};
+  ${height};
+  ${display};
+  ${fontSize};
+  ${maxWidth};
+  ${position};
+  ${flexWrap};
+  ${minHeight};
   ${alignSelf};
-  display: flex;
-  ${props => (props.maxWidth ? maxWidth : `max-width: 100%`)};
-  box-sizing: border-box;
+  ${boxShadow};
+  ${alignItems};
+  ${borderRadius};
+  ${flexDirection};
+  ${justifyContent};
+  box-sizing: ${props => props.boxSizing || "border-box"};
 `;
 
 export default Box;
 
+Box.defaultProps = {
+  display: "flex",
+  flexWrap: "wrap",
+  waxWidth: "100%",
+  position: "relative",
+  flexDirection: "column"
+};
+
 Box.propTypes = {
-  ...space.propTypes,
+  ...flex.propTypes,
   ...width.propTypes,
+  ...color.propTypes,
+  ...space.propTypes,
+  ...order.propTypes,
+  ...zIndex.propTypes,
+  ...height.propTypes,
+  ...display.propTypes,
+  ...maxWidth.propTypes,
+  ...position.propTypes,
   ...fontSize.propTypes,
-  ...color.propTypes
+  ...minHeight.propTypes,
+  ...boxShadow.propTypes,
+  ...alignSelf.propTypes,
+  ...alignItems.propTypes,
+  ...borderRadius.propTypes,
+  ...flexDirection.propTypes,
+  ...justifyContent.propTypes
 };
