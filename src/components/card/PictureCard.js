@@ -66,6 +66,7 @@ PictureCard.defaultProps = {
   width: "auto",
   height: "auto",
   display: "flex",
+  minWidth: "220px",
   maxWidth: "100%",
   onClick: () => {},
   minHeight: "320px",
