@@ -8882,6 +8882,13 @@ react-modal@^3.6.1:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
+react-offline@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-offline/-/react-offline-0.1.0.tgz#779558c50c9cd9f945b1588f451d58c37b15cd42"
+  integrity sha512-Q41bcKI1TTohT0UaagHC31WbzgARqlucWG6A2S1Ux9nnqvLAWxKo8wsvWITcCuSq38/U640pws/JT+JulO4khg==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-perfect-scrollbar@^1.4.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/react-perfect-scrollbar/-/react-perfect-scrollbar-1.4.2.tgz#48cc3466bedf4df6e2632a543b055462d5e78808"
