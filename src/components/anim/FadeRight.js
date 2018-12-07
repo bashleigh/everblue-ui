@@ -34,9 +34,6 @@ const AnimatedDiv = styled(animated.div)`
   ${justifyContent};
   box-sizing: border-box;
   ${props => (props.flexDirection ? flexDirection : "flex-direction: column")};
-  @media screen and (max-width: 768px) {
-    padding: 20px;
-  }
 `;
 
 export default ({ children, style, delay, customConfig, ...rest }) => {

@@ -9,6 +9,7 @@ import {
   height,
   display,
   maxWidth,
+  minWidth,
   position,
   fontSize,
   flexWrap,
@@ -32,6 +33,7 @@ const Box = styled.div`
   ${display};
   ${fontSize};
   ${maxWidth};
+  ${minWidth};
   ${position};
   ${flexWrap};
   ${minHeight};
@@ -48,7 +50,6 @@ export default Box;
 
 Box.defaultProps = {
   display: "flex",
-  flexWrap: "wrap",
   waxWidth: "100%",
   position: "relative",
   flexDirection: "column"
