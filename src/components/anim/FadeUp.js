@@ -25,17 +25,14 @@ const AnimatedDiv = styled(animated.div)`
   box-sizing: border-box;
   max-width: 100%;
   width: auto;
-  @media screen and (max-width: 768px) {
-    padding: 20px;
-  }
 `;
 
-export default ({ children, style, delay, customConfig }) => {
+export default ({ children, style, delay, customConfig, duration }) => {
   return (
     <Spring
       native
       delay={delay}
-      config={getConfig(customConfig)}
+      config={{ duration }}
       from={{ opacity: 0, translateY: "40px" }}
       to={{ opacity: 1, translateY: "0" }}
     >

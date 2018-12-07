@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { config, Transition } from "react-spring";
-import { P } from "../";
+import { Text } from "../";
 import { Row, TextCont, StyledAlert, CloseIcon } from "./Elements";
 
 class Alert extends Component {
@@ -70,11 +70,19 @@ class Alert extends Component {
         {open =>
           open &&
           (props => (
-            <StyledAlert {...this.props} style={props}>
+            <StyledAlert
+              {...this.props}
+              style={{
+                transform: props.translateY.interpolate(
+                  x => `translate3d(0,${x},0)`
+                ),
+                ...props
+              }}
+            >
               <Row>
                 {icon && this._renderIcon(icon)}
                 <TextCont>
-                  <P>{text}</P>
+                  <Text {...this.props}>{text}</Text>
                 </TextCont>
                 <CloseIcon onClick={() => this._handleClose()} />
               </Row>
