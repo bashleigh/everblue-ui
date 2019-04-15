@@ -1,0 +1,52 @@
+import React from 'react'
+import styled from 'styled-components'
+import { Spring, config, animated } from 'react-spring'
+
+const getConfig = (customConfig) => {
+  switch (customConfig) {
+    case 'slow':
+      return config.slow
+    case 'gentle':
+      return config.gentle
+    case 'stiff':
+      return config.stiff
+    case 'wobbly':
+      return config.wobbly
+    default:
+      return config.default
+  }
+}
+
+const AnimatedDiv = styled(animated.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: auto;
+`
+
+export default ({ children, style, delay, customConfig, duration }: any) => {
+  return (
+    <Spring
+      native={true}
+      delay={delay}
+      config={{ duration }}
+      from={{ opacity: 0, translateY: '40px' }}
+      to={{ opacity: 1, translateY: '0' }}
+    >
+      {({ opacity, translateY }) => (
+        <AnimatedDiv
+          style={{
+            opacity,
+            transform: translateY.interpolate((x) => `translate3d(0,${x},0)`),
+            ...style
+          }}
+        >
+          {children}
+        </AnimatedDiv>
+      )}
+    </Spring>
+  )
+}

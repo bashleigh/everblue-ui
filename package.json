@@ -4,14 +4,19 @@
   "description": "A user friendly, open source component library built using React & styled-components.",
   "main": "dist/index.js",
   "scripts": {
-    "docz:dev": "docz dev",
     "docz:build": "docz build",
+    "docz:dev": "docz dev",
+    "format": "yarn prettier -- --write",
+    "lint": "tslint 'src/**/*.ts?(x)'",
+    "precommit": "yarn format",
+    "prepublishOnly": "rm -rf ./dist && npm run transpile",
+    "prettier": "prettier \"**/*.+(js|jsx|json|css|scss|ts|tsx)\"",
+    "start": "babel src/components --extensions .ts,.tsx,.js -w -d dist",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "rm -rf ./dist && npm run transpile",
-    "transpile": "babel src/components --ignore */stories -d dist --copy-files",
-    "transpile:watch": "babel src/components -w -d dist",
-    "lint": "eslint src/components/**; exit 0"
+    "transpile": "babel src/components --ignore */stories  --extensions .ts,.tsx,.js -d dist --copy-files",
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "validate": "yarn lint && prettier -- --list-different"
   },
   "author": "SovTech",
   "license": "MIT",
@@ -21,9 +26,9 @@
     "styled-system": "^3.1.11"
   },
   "peerDependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
-    "react-spring": ">= 6",
+    "react": ">= 16.8",
+    "react-dom": ">= 16.8",
+    "react-spring": ">= 8",
     "styled-components": ">= 4"
   },
   "devDependencies": {
@@ -33,19 +38,30 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
     "@storybook/addon-actions": "^4.0.2",
     "@storybook/addon-info": "^4.0.2",
     "@storybook/addon-storyshots": "^4.0.4",
-    "@storybook/react": "^4.0.2",
+    "@storybook/react": "^5.0.8",
+    "@types/styled-components": "^4.1.14",
+    "@types/styled-system": "^4.0.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-styled-components": "^1.9.2",
     "docz": "^0.12.9",
     "docz-plugin-netlify": "^1.1.4",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
     "prop-types": "^15.6.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-feather": "^1.1.4",
-    "react-spring": "^6.1.8",
-    "styled-components": "^4.0.3"
+    "react-spring": "^8.0.19",
+    "styled-components": "^4.0.3",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
+    "tslint-react-hooks": "^2.0.0",
+    "typescript": "3.3"
   }
 }
