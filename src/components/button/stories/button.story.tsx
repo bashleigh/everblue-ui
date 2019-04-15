@@ -9,4 +9,6 @@ storiesOf('Button', module)
   .add('Minimal', () => <Button color={Colors.blue} minimal text="Minimal Button" />)
   .add('Outline Button', () => <Button color={Colors.blue} outline text="Outline Button" />)
   .add('Icon Left', () => <Button icon={<Home color="white" size={16} />} text="Icon Left" />)
-  .add('Icon Right', () => <Button iconPos="right" icon={<Home color="white" size={16} />} text="Icon Right" />)
+  .add('Icon Right', () => (
+    <Button iconPos="right" icon={<Home color="white" size={16} />} text="Icon Right" />
+  ))

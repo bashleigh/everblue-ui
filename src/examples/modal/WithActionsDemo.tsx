@@ -36,7 +36,12 @@ class WithActionsDemo extends Component {
           }
           text="Show Modal with Actions"
         />
-        <Modal heading="A modal with actions" onClose={this._callBack} open={showModal} actions={Actions} />
+        <Modal
+          heading="A modal with actions"
+          onClose={this._callBack}
+          open={showModal}
+          actions={Actions}
+        />
       </Fragment>
     )
   }

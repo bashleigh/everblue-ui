@@ -36,7 +36,11 @@ const TextCont = styled('div')`
 
 const PictureCard = (props) => (
   <Box {...props}>
-    <PictureCont backgroundSize={props.backgroundSize} bgImage={props.bgImage} minHeight={props.minHeight} />
+    <PictureCont
+      backgroundSize={props.backgroundSize}
+      bgImage={props.bgImage}
+      minHeight={props.minHeight}
+    />
     <ContentCont>
       <TextCont>
         <H5 color={props.headingColor}>{props.cardTitle}</H5>

@@ -15,14 +15,16 @@ const StyledButton = styled.button`
   height: ${(props) => (props.size === 'lg' ? '50px' : props.size === 'md' ? '40px' : '30px')};
   border: ${(props) => (props.outline ? `1px solid ${props.color}` : 'none')};
   border-radius: ${(props) => (props.rounded ? '4px' : 0)};
-  box-shadow: ${(props) => (props.bg === 'transparent' || props.minimal ? 'none' : '0 1px 3px rgba(50,50,93,0.2)')};
+  box-shadow: ${(props) =>
+    props.bg === 'transparent' || props.minimal ? 'none' : '0 1px 3px rgba(50,50,93,0.2)'};
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
   cursor: pointer;
   outline: none;
   position: relative;
   text-decoration: none;
   &:hover {
-    box-shadow: ${(props) => (props.bg === 'transparent' || props.minimal ? 'none' : '0 1px 5px rgba(50,50,93,0.5)')};
+    box-shadow: ${(props) =>
+      props.bg === 'transparent' || props.minimal ? 'none' : '0 1px 5px rgba(50,50,93,0.5)'};
     background: ${(props) => props.minimal && 'rgba(50,50,93,0.05)'};
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: ${(props) => props.hover && 'translateY(-1px)'};

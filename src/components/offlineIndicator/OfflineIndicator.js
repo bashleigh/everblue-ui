@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const OfflineStyleWrapper = styled.div`
   display: flex;
@@ -7,4 +7,4 @@ export const OfflineStyleWrapper = styled.div`
   height: 4vh;
   background-color: red;
   color: white;
-`;
+`

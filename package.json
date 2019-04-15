@@ -63,5 +63,11 @@
     "tslint-react": "^4.0.0",
     "tslint-react-hooks": "^2.0.0",
     "typescript": "3.3"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx,jsx,json,css}": [
+      "yarn prettier -- --write",
+      "git add"
+    ]
   }
 }

@@ -2,7 +2,8 @@ import doczPluginNetlify from 'docz-plugin-netlify'
 
 export default {
   title: 'Everblue UI',
-  description: 'A user friendly, open source component library built using React & styled-components.',
+  description:
+    'A user friendly, open source component library built using React & styled-components.',
   themeConfig: {
     mode: 'light',
     logo: {

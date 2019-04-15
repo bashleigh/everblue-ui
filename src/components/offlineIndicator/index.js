@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Offline from "react-offline";
-import { OfflineStyleWrapper } from "./OfflineIndicator";
+import React, { Component } from 'react'
+import Offline from 'react-offline'
+import { OfflineStyleWrapper } from './OfflineIndicator'
 
 export default class OfflineIndicator extends Component {
   render() {
@@ -8,12 +8,10 @@ export default class OfflineIndicator extends Component {
       <Offline>
         {({ isOffline, isOnline }) => {
           return isOffline ? (
-            <OfflineStyleWrapper>
-              {this.props.text || "You are offline"}
-            </OfflineStyleWrapper>
-          ) : null;
+            <OfflineStyleWrapper>{this.props.text || 'You are offline'}</OfflineStyleWrapper>
+          ) : null
         }}
       </Offline>
-    );
+    )
   }
 }

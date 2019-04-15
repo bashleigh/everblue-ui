@@ -2,7 +2,14 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Transition } from 'react-spring'
 
-import { ModalWrap, ModalInner, ModalBodyCont, ModalHeaderCont, CloseButton, ModalFooterCont } from './Elements'
+import {
+  ModalWrap,
+  ModalInner,
+  ModalBodyCont,
+  ModalHeaderCont,
+  CloseButton,
+  ModalFooterCont
+} from './Elements'
 import { H5, P } from '../'
 
 const MODAL_ANIM_CONFIG = {
