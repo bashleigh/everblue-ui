@@ -11,7 +11,7 @@ export const state = {
 
 export const actionState = {
   open: true,
-  text: "Here's an alert with an action",
+  text: 'Here\'s an alert with an action',
   action: <Button size="sm" text="Got it" />
 }
 
@@ -20,7 +20,6 @@ export const actions = {
 }
 
 storiesOf('Alert', module)
-  .add('Regular Alert', () => <Alert />)
   .add('With Action', () => <AlertActionsDemo />)
   .add('Custom Alert', () => <CustomAlertDemo />)
   .add('Regular Alert Demo', () => <AlertDemo />)

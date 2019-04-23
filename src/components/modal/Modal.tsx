@@ -1,16 +1,9 @@
 import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { Transition } from 'react-spring'
+import { Transition } from 'react-spring/renderprops.cjs'
 
-import {
-  ModalWrap,
-  ModalInner,
-  ModalBodyCont,
-  ModalHeaderCont,
-  CloseButton,
-  ModalFooterCont
-} from './Elements'
+import { ModalWrap, ModalInner, ModalBodyCont, ModalHeaderCont, CloseButton } from './Elements'
 import { H5, P } from '../'
+import { StyledSystemProps } from '../../themes/StyledSystemProps'
 
 const MODAL_ANIM_CONFIG = {
   duration: 250,
@@ -18,8 +11,25 @@ const MODAL_ANIM_CONFIG = {
   friction: 10
 }
 
-class Modal extends Component {
-  constructor(props) {
+type Props = StyledSystemProps & {
+  heading?: string
+  body?: string
+  mode?: string
+  open?: boolean
+  onClose: () => void
+}
+
+type State = {
+  open: boolean
+}
+
+class Modal extends Component<Props, State> {
+  static defaultProps = {
+    heading: 'Modal Heading',
+    body: 'Modal Body',
+    onClose: () => false
+  }
+  constructor(props: Props) {
     super(props)
     this.state = {
       open: props.open
@@ -27,18 +37,9 @@ class Modal extends Component {
   }
 
   _renderContent() {
-    const { children, heading, body, onClose, actions } = this.props
-    const hasAction = !!actions
+    const { children, heading, body, onClose } = this.props
     if (children) {
-      return (
-        <Fragment>
-          <ModalHeaderCont>
-            <H5>{heading}</H5>
-            <CloseButton onClick={onClose} />
-          </ModalHeaderCont>
-          {children}
-        </Fragment>
-      )
+      return <Fragment />
     }
     return (
       <Fragment>
@@ -46,21 +47,19 @@ class Modal extends Component {
           <H5>{heading}</H5>
           <CloseButton onClick={onClose} />
         </ModalHeaderCont>
-        <ModalBodyCont hasAction={!hasAction}>
+        <ModalBodyCont>
           <P>{body}</P>
         </ModalBodyCont>
-        {actions && <ModalFooterCont>{actions}</ModalFooterCont>}
       </Fragment>
     )
   }
 
   render() {
-    const { children, open } = this.props
-    const hasChildren = !!children
+    const { children, heading, onClose } = this.props
     return (
       <Transition
         items={open}
-        native
+        native={true}
         config={MODAL_ANIM_CONFIG}
         from={{
           opacity: 0,
@@ -76,18 +75,21 @@ class Modal extends Component {
           pointerEvents: 'none'
         }}
       >
-        {(open) =>
+        {(open: any) =>
           open &&
-          ((props) => (
+          ((props: any) => (
             <ModalWrap style={{ opacity: props.opacity }}>
               <ModalInner
-                haschildren={hasChildren}
                 style={{
-                  transform: props.translateY.interpolate((x) => `translate3d(0,${x},0)`),
+                  transform: props.translateY.interpolate((x: any) => `translate3d(0,${x},0)`),
                   opacity: props.opacity
                 }}
               >
-                {this._renderContent()}
+                <ModalHeaderCont>
+                  <H5>{heading}</H5>
+                  <CloseButton onClick={onClose} />
+                </ModalHeaderCont>
+                {children}
               </ModalInner>
             </ModalWrap>
           ))
@@ -95,21 +97,6 @@ class Modal extends Component {
       </Transition>
     )
   }
-}
-
-Modal.defaultProps = {
-  heading: 'Modal Heading',
-  body: 'Modal Body',
-  onClose: () => {}
-}
-
-Modal.propTypes = {
-  heading: PropTypes.string,
-  body: PropTypes.string,
-  children: PropTypes.node,
-  mode: PropTypes.string,
-  actions: PropTypes.func,
-  onClose: PropTypes.func.isRequired
 }
 
 export default Modal

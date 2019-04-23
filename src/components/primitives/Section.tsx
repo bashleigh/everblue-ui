@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { StyledSystemProps } from '../../themes/StyledSystemProps'
 import {
   flex,
   order,
@@ -16,21 +17,31 @@ import {
   zIndex
 } from 'styled-system'
 
-export default styled.section`
+const StyledSection = styled.section`
   ${flex};
-  ${space};
   ${order};
   ${color};
   ${width};
+  ${space};
   ${zIndex};
   ${height};
-  ${position};
+  ${maxWidth};
   ${fontSize};
+  ${position};
   ${alignSelf};
   ${alignItems};
   ${flexDirection};
   ${justifyContent};
   display: flex;
   position: relative;
-  ${(props) => (props.maxWidth ? maxWidth : `max-width: 100%`)};
 `
+
+const Section: React.FC<StyledSystemProps> = ({ children, ...rest }) => (
+  <StyledSection {...rest}>{children}</StyledSection>
+)
+
+export default Section
+
+Section.defaultProps = {
+  maxWidth: '100%'
+}

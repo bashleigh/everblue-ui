@@ -1,9 +1,22 @@
 import * as React from 'react'
+import { ButtonProps } from './Button'
+import styled from 'styled-components'
+import Button from './Button'
+import { theme } from '../../themes'
 
-type Props = {}
+type MinimalButtonProps = ButtonProps & {
+  hoverBg?: string
+}
 
-const MinimalButton: React.FC<Props> = (props) => {
-  return
+const StyledMinimalButton = styled(Button)`
+  &:hover {
+    background-color: ${(props: MinimalButtonProps) =>
+      props.hoverBg || theme.colors.transparentBlack};
+  }
+`
+
+const MinimalButton: React.FC<MinimalButtonProps> = (props) => {
+  return <StyledMinimalButton bg="transparent" {...props} />
 }
 
 export default MinimalButton

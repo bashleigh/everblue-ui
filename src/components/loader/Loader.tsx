@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-const Loader = styled.div`
+const StyledLoader = styled.div`
   display: block;
   height: 32px;
   width: 32px;
@@ -79,12 +79,16 @@ const Loader = styled.div`
   }
 `
 
-export default (props) => {
+interface LoaderProps {}
+
+const Loader: React.FC<LoaderProps> = () => {
   return (
     <Wrapper>
-      <Loader>
+      <StyledLoader>
         <span />
-      </Loader>
+      </StyledLoader>
     </Wrapper>
   )
 }
+
+export default Loader

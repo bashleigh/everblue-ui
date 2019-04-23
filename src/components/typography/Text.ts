@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { space, color, textAlign, fontSize, fontWeight, width } from 'styled-system'
-import { StyledSystemProps } from '../../themes'
-import { ThemeInterface } from '../../themes/'
+import { ThemeInterface } from '../../themes/ThemeInterface'
+import { StyledSystemProps } from '../../themes/StyledSystemProps'
 
 type Props = StyledSystemProps & {
   pointer?: boolean

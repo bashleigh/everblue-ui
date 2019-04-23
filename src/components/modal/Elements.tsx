@@ -29,8 +29,8 @@ export const ModalInner = styled(animated.div)`
   flex-direction: column;
   background-color: #fff;
   justify-content: center;
-  width: ${(props) => (props.hasChildren ? 'auto' : '500px')}
-  box-shadow: 0 15px 35px rgba(50,50,93,.2), 0 5px 15px rgba(0,0,0,.17);
+  width: ${(props: any) => (props.hasChildren ? 'auto' : '500px')};
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.17);
 `
 
 export const CustomModalInner = styled(animated.div)`
@@ -43,7 +43,7 @@ export const CustomModalInner = styled(animated.div)`
   box-sizing: border-box;
   flex-direction: column;
   justify-content: center;
-  background-color: ${(props) => props.bg || 'transparent'};
+  background-color: ${(props: any) => props.bg || 'transparent'};
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.17);
 `
 
@@ -64,7 +64,7 @@ export const ModalBodyCont = styled.div`
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
-  border-bottom: ${(props) => (props.hasAction ? 'none' : '1px solid #f1f7fb')};
+  border-bottom: ${(props: any) => (props.hasAction ? 'none' : '1px solid #f1f7fb')};
 `
 
 export const ModalFooterCont = styled.div`
@@ -76,7 +76,7 @@ export const ModalFooterCont = styled.div`
   justify-content: flex-end;
 `
 
-export const CloseButton = styled(X)`
+export const CloseButton = styled(X)<any>`
   right: 20px;
   width: 20px;
   height: 20px;

@@ -1,37 +1,54 @@
-import styled from 'styled-components'
-import { animated } from 'react-spring'
 import { X } from 'react-feather'
-import { color, space } from 'styled-system'
+import { theme } from '../../themes'
+import { animated } from 'react-spring'
+import styled, { css } from 'styled-components'
+import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { color, space, justifyContent, alignItems } from 'styled-system'
 
-export const Row = styled.div`
-  display: flex;
-  justify-content: ${(props) => (props.actionRow ? 'flex-end' : 'space-between')};
-  flex-direction: row;
-  width: 100%;
-  align-items: center;
-  margin-top: ${(props) => props.actionRow && '10px'};
-`
+type AlertProps = {
+  alertPosition?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+}
 
 export const TextCont = styled.div`
   display: flex;
   max-width: 350px;
 `
 
-export const StyledAlert = styled(animated.div)`
+export const StyledAlert = styled(animated.div)<StyledSystemProps & AlertProps>`
+  ${color};
+  ${space};
+  ${alignItems};
+  ${justifyContent};
   width: auto;
-  background-color: ${(props) => props.bg};
   display: flex;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 15px 20px;
-  color: ${(props) => props.color};
   z-index: 1400;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
-  justify-content: space-between;
+  position: fixed;
+  border-radius: ${theme.baseRadius};
+  box-shadow: ${theme.baseBoxShadow};
+  ${(props: AlertProps) => {
+    if (props.alertPosition === 'top-left') {
+      return css`
+        top: 20px;
+        left: 20px;
+      `
+    }
+    if (props.alertPosition === 'top-right') {
+      return css`
+        top: 20px;
+        right: 20px;
+      `
+    }
+    if (props.alertPosition === 'bottom-left') {
+      return css`
+        bottom: 20px;
+        left: 20px;
+      `
+    }
+    return css`
+      bottom: 20px;
+      right: 20px;
+    `
+  }}
 `
 
 export const CloseIcon = styled(X)<any>`

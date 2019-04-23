@@ -2,10 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Box from '../primitives/Box'
+import { theme } from '../../themes'
+import { StyledSystemProps } from '../../themes/StyledSystemProps'
 
-const StyledBox = styled(Box)`
-  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+type Props = StyledSystemProps & {
+  onClick?: () => void
+  color?: string
+}
+
+const StyledCard = styled(Box)`
   overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   &:hover {
     cursor: pointer;
     transform: translateY(-2px);
@@ -14,23 +21,22 @@ const StyledBox = styled(Box)`
   }
 `
 
-const Card = (props) => (
-  <StyledBox onClick={props.onClick} {...props}>
-    {props.children}
-  </StyledBox>
+const Card: React.FC<Props> = ({ onClick, children, ...rest }) => (
+  <StyledCard onClick={onClick} {...rest}>
+    {children}
+  </StyledCard>
 )
 
 Card.defaultProps = {
-  p: '20px',
-  bg: '#FFF',
+  p: 3,
+  bg: 'white',
   width: 'auto',
   display: 'flex',
   maxWidth: '100%',
-  onClick: () => {},
+  onClick: () => false,
   minHeight: '200px',
   borderRadius: '4px',
-  boxSizing: 'border-box',
-  boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)'
+  boxShadow: theme.baseBoxShadow
 }
 
 export default Card

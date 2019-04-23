@@ -1,26 +1,21 @@
-export { default as StyledSystemProps } from './StyledSystemProps'
-export { default as ThemeInterface } from './ThemeInterface'
+import { Theme } from './ThemeInterface'
+import { StyledSystemProps } from './StyledSystemProps'
 
-const theme = {
+const theme: Theme = {
   fontSizes: [14, 16, 24, 32, 48, 64, 96, 128],
   space: [0, 5, 10, 15, 30, 60, 120],
-  breakpoints: ['768px', '992px', '1200px'],
   fontFamily: 'Helvetica Neue',
   colors: {
-    blue: '#3578EA',
-    error: 'rgba(200, 0, 0, 0.8)',
-    success: '#16a085',
-    white: '#FFFFFF',
-    offWhite: '#f9f9f9',
-    grayExtraLight: '#EEF1F5',
-    semiBlack: '#313131eb',
-    grayLight: '#CED4DE',
-    gray: '#7D899C',
-    grayDark: '#2D3747',
-    grayExtraDark: '#1D2330',
-    dark: '#13161F',
-    skyBlue: '#1FB6FF'
-  }
+    dark: '#31303A',
+    accent: '#5AC1F2',
+    primary: '#5AC1F2',
+    neutral: '#C9BDBC',
+    transparentBlack: 'rgba(0,0,0,0.4)',
+    transparentWhite: 'rgba(255,255,255,0.4)'
+  },
+  baseRadius: 4,
+  baseBoxShadow: 'box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)',
+  baseTransition: 'all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
 }
 
 export { theme }

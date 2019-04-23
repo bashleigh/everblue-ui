@@ -1,49 +1,54 @@
 import {
-  FlexProps,
-  ColorProps,
-  SpaceProps,
-  WidthProps,
-  HeightProps,
-  BorderProps,
-  DisplayProps,
-  BordersProps,
-  MaxWidthProps,
-  PositionProps,
-  MinWidthProps,
-  FontSizeProps,
-  MaxHeightProps,
-  BoxShadowProps,
-  TextAlignProps,
   AlignItemsProps,
-  FontWeightProps,
-  FontFamilyProps,
+  BorderProps,
   BorderRadiusProps,
+  BordersProps,
+  BoxShadowProps,
+  ColorProps,
+  DisplayProps,
+  FlexBasisProps,
   FlexDirectionProps,
+  FlexProps,
   FlexWrapProps,
+  FontFamilyProps,
+  FontSizeProps,
+  FontWeightProps,
+  HeightProps,
   JustifyContentProps,
-  FlexBasisProps
+  MaxHeightProps,
+  MaxWidthProps,
+  MinWidthProps,
+  PositionProps,
+  SpaceProps,
+  TextAlignProps,
+  WidthProps,
+  MinHeightProps
 } from 'styled-system'
 
-export type StyledSystemProps = ColorProps &
-  FlexProps &
-  SpaceProps &
-  WidthProps &
-  HeightProps &
+export type StyledSystemProps = AlignItemsProps &
   BorderProps &
-  BordersProps &
-  PositionProps &
-  MinWidthProps &
-  MaxWidthProps &
-  FontSizeProps &
-  TextAlignProps &
-  BoxShadowProps &
-  MaxHeightProps &
-  FontFamilyProps &
-  AlignItemsProps &
-  FontWeightProps &
   BorderRadiusProps &
-  FlexDirectionProps &
-  FlexWrapProps &
-  JustifyContentProps &
+  BordersProps &
+  BoxShadowProps &
+  ColorProps &
+  DisplayProps &
   FlexBasisProps &
-  DisplayProps
+  FlexDirectionProps &
+  FlexProps &
+  FlexWrapProps &
+  FontFamilyProps &
+  FontSizeProps &
+  FontWeightProps &
+  HeightProps &
+  JustifyContentProps &
+  MaxHeightProps &
+  MaxWidthProps &
+  MaxWidthProps &
+  MinWidthProps &
+  PositionProps &
+  SpaceProps &
+  MinHeightProps &
+  TextAlignProps &
+  WidthProps & {
+    color?: string
+  }

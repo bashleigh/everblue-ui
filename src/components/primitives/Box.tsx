@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { StyledSystemProps } from '../../themes/StyledSystemProps'
 import {
   flex,
   order,
@@ -22,7 +23,7 @@ import {
   justifyContent
 } from 'styled-system'
 
-const Box = styled.div`
+const Box = styled.div<StyledSystemProps>`
   ${flex};
   ${space};
   ${color};
@@ -43,35 +44,14 @@ const Box = styled.div`
   ${borderRadius};
   ${flexDirection};
   ${justifyContent};
-  box-sizing: ${(props) => props.boxSizing || 'border-box'};
+  box-sizing: ${(props: any) => props.boxSizing || 'border-box'};
 `
 
 export default Box
 
 Box.defaultProps = {
   display: 'flex',
-  waxWidth: '100%',
+  maxWidth: '100%',
   position: 'relative',
   flexDirection: 'column'
-}
-
-Box.propTypes = {
-  ...flex.propTypes,
-  ...width.propTypes,
-  ...color.propTypes,
-  ...space.propTypes,
-  ...order.propTypes,
-  ...zIndex.propTypes,
-  ...height.propTypes,
-  ...display.propTypes,
-  ...maxWidth.propTypes,
-  ...position.propTypes,
-  ...fontSize.propTypes,
-  ...minHeight.propTypes,
-  ...boxShadow.propTypes,
-  ...alignSelf.propTypes,
-  ...alignItems.propTypes,
-  ...borderRadius.propTypes,
-  ...flexDirection.propTypes,
-  ...justifyContent.propTypes
 }

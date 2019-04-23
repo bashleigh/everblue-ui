@@ -1,23 +1,26 @@
 import { TextTransformProperty } from 'csstype'
 
 export interface Theme {
+  space: number[]
   fontFamily: string
   fontSizes: number[]
-  space: number[]
   colors: {
-    primary: string
-    accent: string
-    neutral: string
-    secondary: string
-    transparent: string
-    neutralLight: string
-    transparentBlack: string
-    transparentWhite: string
+    primary?: string
+    accent?: string
+    dark?: string
+    neutral?: string
+    secondary?: string
+    transparent?: string
+    neutralLight?: string
+    transparentBlack?: string
+    transparentWhite?: string
   }
+  pointer?: boolean
   baseRadius?: number
   baseBoxShadow?: string
+  baseTransition?: string
   textTransform?: TextTransformProperty
-  pointer?: boolean
+  gridGutter?: any
 }
 
 export interface ThemeInterface {

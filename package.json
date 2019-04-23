@@ -14,7 +14,7 @@
     "start": "babel src/components --extensions .ts,.tsx,.js -w -d dist",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "babel src/components --ignore */stories  --extensions .ts,.tsx,.js -d dist --copy-files",
+    "transpile": "babel src/components --ignore **/stories  --extensions .ts,.tsx,.js -d dist --copy-files",
     "typecheck": "tsc --noEmit --skipLibCheck",
     "validate": "yarn lint && prettier -- --list-different"
   },
@@ -58,11 +58,13 @@
     "react-feather": "^1.1.4",
     "react-spring": "^8.0.19",
     "styled-components": "^4.0.3",
+    "ts-loader": "^5.3.3",
     "tslint": "^5.15.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
     "tslint-react-hooks": "^2.0.0",
-    "typescript": "3.3"
+    "typescript": "3.3",
+    "webpack": "^4.30.0"
   },
   "lint-staged": {
     "src/**/*.{js,ts,tsx,jsx,json,css}": [
