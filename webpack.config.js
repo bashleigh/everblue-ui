@@ -7,23 +7,23 @@ module.exports = {
     'styled-components': {
       commonjs: 'styled-components',
       commonjs2: 'styled-components',
-      amd: 'styled-components',
-    },
+      amd: 'styled-components'
+    }
   },
   module: {
     rules: [
       {
         test: /^(?!.*\.story\.tsx$).*\.tsx$/,
         use: 'ts-loader',
-        include: ['./src/components'],
-      },
-    ],
+        include: ['./src/components']
+      }
+    ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'everblue-ui.js',
-  },
-};
+    filename: 'everblue-ui.js'
+  }
+}
