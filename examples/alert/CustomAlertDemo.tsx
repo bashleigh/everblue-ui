@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Button } from '../../components'
 import { Alert } from '../../components'
-import { Colors } from '../../themes'
+import { Colors } from '../../theme'
 import { CheckCircle } from 'react-feather'
 
 class AlertDemo extends Component {

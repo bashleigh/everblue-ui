@@ -1,5 +1,6 @@
+import * as React from 'react'
 import styled from 'styled-components'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 import {
   flex,
   order,
@@ -23,7 +24,11 @@ import {
   justifyContent
 } from 'styled-system'
 
-const Box = styled.div<StyledSystemProps>`
+export type BoxProps = StyledSystemProps & {
+  onClick?: () => void
+}
+
+const StyledBox = styled.div<StyledSystemProps>`
   ${flex};
   ${space};
   ${color};
@@ -46,6 +51,10 @@ const Box = styled.div<StyledSystemProps>`
   ${justifyContent};
   box-sizing: ${(props: any) => props.boxSizing || 'border-box'};
 `
+
+const Box: React.FC<BoxProps> = ({ children, ...rest }) => (
+  <StyledBox {...rest}>{children}</StyledBox>
+)
 
 export default Box
 

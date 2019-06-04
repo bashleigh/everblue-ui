@@ -1,7 +1,7 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
+import * as React from 'react'
 import { Row } from 'react-flexbox-grid'
-import { ThemeInterface } from '../../themes/ThemeInterface'
+import styled, { css } from 'styled-components'
+import { ThemeInterface } from '../theme/ThemeInterface'
 
 const StyledRow = styled(Row)`
   ${(props: ThemeInterface) => {

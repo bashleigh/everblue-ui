@@ -6,15 +6,10 @@ menu: Components
 import { Playground, PropsTable } from 'docz'
 import styled from 'styled-components'
 
-import { Colors } from '../../src/themes'
+import { Colors } from '../../src/theme'
 import { Download } from 'react-feather'
 import { Modal, Row } from '../../src/components'
-import { 
-  ModalDemo, 
-  CustomModalDemo, 
-  WithActionsDemo 
-} from '../../src/examples/modal'
-
+import { ModalDemo, CustomModalDemo, WithActionsDemo } from '../../src/examples/modal'
 
 # Modal
 
@@ -81,7 +76,7 @@ render() {
 
 ## With Actions
 
-If you would like to add your own custom actions to the footer of the `Modal` component, simply pass your action(s) as an element to the modal component using the `actions` prop. 
+If you would like to add your own custom actions to the footer of the `Modal` component, simply pass your action(s) as an element to the modal component using the `actions` prop.
 
 <WithActionsDemo />
 
@@ -124,4 +119,3 @@ render() {
 ## API
 
 <PropsTable of={Modal} />
-

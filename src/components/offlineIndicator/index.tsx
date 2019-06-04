@@ -12,11 +12,11 @@ const OfflineStyleWrapper = styled.div`
   color: white;
 `
 
-type Props = {
+export type OfflineIndicatorProps = {
   text: string
 }
 
-export const OfflineIndicator: React.FC<Props> = ({ text }) => (
+export const OfflineIndicator: React.FC<OfflineIndicatorProps> = ({ text }) => (
   <Offline>
     {({ isOffline }: any) => {
       return isOffline ? (

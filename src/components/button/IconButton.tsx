@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 import Button from './Button'
 import styled from 'styled-components'
 import { ButtonProps } from './Button'
