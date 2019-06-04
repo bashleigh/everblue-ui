@@ -11,7 +11,7 @@ export const state = {
 
 export const actionState = {
   open: true,
-  text: 'Here\'s an alert with an action',
+  text: "Here's an alert with an action",
   action: <Button size="sm" text="Got it" />
 }
 

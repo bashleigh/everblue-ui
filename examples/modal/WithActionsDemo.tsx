@@ -4,7 +4,14 @@ import { Colors } from '../../theme'
 
 const Actions = (
   <Fragment>
-    <Button margin="0 10px 0 0" uppercase={true} outline={true} size="sm" color={Colors.blue} text="Undo" />
+    <Button
+      margin="0 10px 0 0"
+      uppercase={true}
+      outline={true}
+      size="sm"
+      color={Colors.blue}
+      text="Undo"
+    />
     <Button uppercase={true} size="sm" text="Submit" />
   </Fragment>
 )
