@@ -5,5 +5,5 @@
     "@babel/plugin-proposal-class-properties",
     "babel-plugin-styled-components"
   ],
-  "ignore": ["/stories/", "node_modules"]
+  "ignore": ["node_modules", "src/**/stories"]
 }

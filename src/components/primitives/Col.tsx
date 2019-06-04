@@ -1,7 +1,7 @@
-import React from 'react'
+import * as React from 'react'
 import { Col } from 'react-flexbox-grid'
 import styled, { css } from 'styled-components'
-import { ThemeInterface } from '../../themes/ThemeInterface'
+import { ThemeInterface } from '../theme/ThemeInterface'
 
 const StyledCol = styled(Col)`
   ${(props: ThemeInterface) => {

@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import { space, color, textAlign, fontSize, fontWeight, width } from 'styled-system'
-import { ThemeInterface } from '../../themes/ThemeInterface'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { ThemeInterface } from '../theme/ThemeInterface'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 
-type Props = StyledSystemProps & {
+export type ParagraphProps = StyledSystemProps & {
   pointer?: boolean
 }
 
-const P = styled.p<Props>`
+const P = styled.p<ParagraphProps>`
   ${space};
   ${color};
   ${width};
@@ -23,5 +23,5 @@ const P = styled.p<Props>`
 export default P
 
 P.defaultProps = {
-  fontSize: 1
+  fontSize: 0
 }

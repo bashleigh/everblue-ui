@@ -1,11 +1,11 @@
 import { X } from 'react-feather'
-import { theme } from '../../themes'
+import { theme } from '../theme'
 import { animated } from 'react-spring'
 import styled, { css } from 'styled-components'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 import { color, space, justifyContent, alignItems } from 'styled-system'
 
-type AlertProps = {
+type AlertPositionProp = {
   alertPosition?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
 }
 
@@ -14,7 +14,7 @@ export const TextCont = styled.div`
   max-width: 350px;
 `
 
-export const StyledAlert = styled(animated.div)<StyledSystemProps & AlertProps>`
+export const StyledAlert = styled(animated.div)<StyledSystemProps & AlertPositionProp>`
   ${color};
   ${space};
   ${alignItems};
@@ -25,7 +25,7 @@ export const StyledAlert = styled(animated.div)<StyledSystemProps & AlertProps>`
   position: fixed;
   border-radius: ${theme.baseRadius};
   box-shadow: ${theme.baseBoxShadow};
-  ${(props: AlertProps) => {
+  ${(props: AlertPositionProp) => {
     if (props.alertPosition === 'top-left') {
       return css`
         top: 20px;

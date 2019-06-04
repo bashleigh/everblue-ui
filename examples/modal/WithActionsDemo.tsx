@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Modal } from '../../components'
-import { Colors } from '../../themes'
+import { Colors } from '../../theme'
 
 const Actions = (
   <Fragment>
-    <Button margin="0 10px 0 0" uppercase outline size="sm" color={Colors.blue} text="Undo" />
-    <Button uppercase size="sm" text="Submit" />
+    <Button margin="0 10px 0 0" uppercase={true} outline={true} size="sm" color={Colors.blue} text="Undo" />
+    <Button uppercase={true} size="sm" text="Submit" />
   </Fragment>
 )
 

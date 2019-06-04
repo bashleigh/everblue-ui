@@ -3,6 +3,7 @@
   "version": "0.1.3",
   "description": "A user friendly, open source component library built using React & styled-components.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "docz:build": "docz build",
     "docz:dev": "docz dev",
@@ -11,11 +12,12 @@
     "precommit": "yarn format",
     "prepublishOnly": "rm -rf ./dist && npm run transpile",
     "prettier": "prettier \"**/*.+(js|jsx|json|css|scss|ts|tsx)\"",
-    "start": "babel src/components --extensions .ts,.tsx,.js -w -d dist",
+    "start": "babel src/components --ignore '**/stories' --extensions .ts,.tsx,.js,.jsx -w -d dist",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "babel src/components --ignore **/stories  --extensions .ts,.tsx,.js -d dist --copy-files",
+    "transpile": "tsc && babel src/components --extensions .ts,.tsx,.js,.jsx -d dist --copy-files",
     "typecheck": "tsc --noEmit --skipLibCheck",
+    "compile": "tsc",
     "validate": "yarn lint && prettier -- --list-different"
   },
   "author": "SovTech",

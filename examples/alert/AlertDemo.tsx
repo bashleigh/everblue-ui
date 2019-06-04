@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { Button } from '../../components'
-import { Alert } from '../../components'
+import { Button } from '../../src/components'
+import { Alert } from '../../src/components'
 
 class AlertDemo extends Component {
   constructor(props) {
