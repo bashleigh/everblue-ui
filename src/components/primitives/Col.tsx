@@ -1,7 +1,10 @@
 import * as React from 'react'
-import { Col } from 'react-flexbox-grid'
+import { Col, ColProps } from 'react-flexbox-grid'
 import styled, { css } from 'styled-components'
 import { ThemeInterface } from '../theme/ThemeInterface'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
+
+export type StyledColProps = ColProps & StyledSystemProps
 
 const StyledCol = styled(Col)`
   ${(props: ThemeInterface) => {
@@ -19,7 +22,7 @@ const StyledCol = styled(Col)`
   }}
 `
 
-const CustomCol: React.FC = ({ children, ...rest }) => {
+const CustomCol: React.FC<StyledColProps> = ({ children, ...rest }) => {
   return <StyledCol {...rest}>{children}</StyledCol>
 }
 

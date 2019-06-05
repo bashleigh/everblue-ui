@@ -8,7 +8,7 @@ const StyledIconButton = styled(Button)`
   width: auto;
 `
 
-const IconButton: React.FC<ButtonProps> = (props) => {
+const IconButton: React.FC<ButtonProps> = () => {
   return <div>icon button</div>
 }
 

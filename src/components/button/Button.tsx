@@ -18,6 +18,7 @@ import { Text } from '../typography'
 import { theme } from '../theme'
 import { StyledSystemProps } from '../theme/StyledSystemProps'
 import { TextTransformProperty } from 'csstype'
+import { animated } from 'react-spring'
 
 export type ButtonProps = StyledSystemProps & {
   text?: string
@@ -27,7 +28,7 @@ export type ButtonProps = StyledSystemProps & {
   textTransform?: TextTransformProperty
 }
 
-const StyledButton = styled.button<StyledSystemProps>`
+const StyledButton = styled(animated.button)<StyledSystemProps>`
   ${space};
   ${color};
   ${width};

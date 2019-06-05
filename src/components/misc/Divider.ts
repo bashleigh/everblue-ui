@@ -1,7 +1,9 @@
 import styled from 'styled-components'
-import { height, space, color } from 'styled-system'
+import { height, space, color, SpaceProps, ColorProps, HeightProps } from 'styled-system'
 
-export default styled.div`
+export type DividerProps = SpaceProps & ColorProps & HeightProps
+
+export default styled.div<DividerProps>`
   ${space};
   ${color};
   ${height};

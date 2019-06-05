@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Transition } from 'react-spring/renderprops.cjs'
 
 import { ModalWrap, ModalInner, ModalBodyCont, ModalHeaderCont, CloseButton } from './Elements'
-import { H5, P } from '../'
+import { H5, P } from '../../../src'
 import { StyledSystemProps } from '../theme/StyledSystemProps'
 
 const MODAL_ANIM_CONFIG = {

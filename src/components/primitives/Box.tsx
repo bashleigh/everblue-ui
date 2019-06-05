@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { StyledSystemProps } from '../theme/StyledSystemProps'
+import { animated } from 'react-spring'
 import {
   flex,
   order,
@@ -28,7 +29,7 @@ export type BoxProps = StyledSystemProps & {
   onClick?: () => void
 }
 
-const StyledBox = styled.div<StyledSystemProps>`
+const StyledBox = styled(animated.div)<StyledSystemProps>`
   ${flex};
   ${space};
   ${color};
