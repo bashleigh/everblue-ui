@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Box from '../primitives/Box'
-import { theme } from '../../themes'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { theme } from '../theme'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 
-type Props = StyledSystemProps & {
+export type CardProps = StyledSystemProps & {
   onClick?: () => void
   color?: string
 }
@@ -21,7 +21,7 @@ const StyledCard = styled(Box)`
   }
 `
 
-const Card: React.FC<Props> = ({ onClick, children, ...rest }) => (
+const Card: React.FC<CardProps> = ({ onClick, children, ...rest }) => (
   <StyledCard onClick={onClick} {...rest}>
     {children}
   </StyledCard>

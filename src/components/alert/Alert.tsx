@@ -3,9 +3,9 @@ import Box from '../primitives/Box'
 import { Text } from '../typography'
 import { useTransition } from 'react-spring'
 import { TextCont, StyledAlert, CloseIcon } from './Elements'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 
-type Props = StyledSystemProps & {
+export type AlertProps = StyledSystemProps & {
   text: string
   open?: boolean
   color?: string
@@ -15,7 +15,7 @@ type Props = StyledSystemProps & {
   alertPosition?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
 }
 
-const Alert: React.FC<Props> = ({
+const Alert: React.FC<AlertProps> = ({
   open,
   autoClose,
   text,

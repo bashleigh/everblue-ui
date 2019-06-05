@@ -14,7 +14,7 @@ const theme: Theme = {
     transparentWhite: 'rgba(255,255,255,0.4)'
   },
   baseRadius: 4,
-  baseBoxShadow: 'box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)',
+  baseBoxShadow: '0 1px 2px rgba(50,50,93,.09), 0 1px 2px rgba(0,0,0,.05)',
   baseTransition: 'all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
 }
 

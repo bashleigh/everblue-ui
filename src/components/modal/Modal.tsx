@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react'
 import { Transition } from 'react-spring/renderprops.cjs'
 
 import { ModalWrap, ModalInner, ModalBodyCont, ModalHeaderCont, CloseButton } from './Elements'
-import { H5, P } from '../'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { H5, P } from '../../../src'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 
 const MODAL_ANIM_CONFIG = {
   duration: 250,
@@ -11,7 +11,7 @@ const MODAL_ANIM_CONFIG = {
   friction: 10
 }
 
-type Props = StyledSystemProps & {
+export type ModalProps = StyledSystemProps & {
   heading?: string
   body?: string
   mode?: string
@@ -19,20 +19,20 @@ type Props = StyledSystemProps & {
   onClose: () => void
 }
 
-type State = {
+type ModalState = {
   open: boolean
 }
 
-class Modal extends Component<Props, State> {
+class Modal extends Component<ModalProps, ModalState> {
   static defaultProps = {
     heading: 'Modal Heading',
     body: 'Modal Body',
     onClose: () => false
   }
-  constructor(props: Props) {
+  constructor(props: ModalProps) {
     super(props)
     this.state = {
-      open: props.open
+      open: props.open || false
     }
   }
 

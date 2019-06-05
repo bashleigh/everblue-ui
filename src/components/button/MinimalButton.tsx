@@ -2,9 +2,9 @@ import * as React from 'react'
 import { ButtonProps } from './Button'
 import styled from 'styled-components'
 import Button from './Button'
-import { theme } from '../../themes'
+import { theme } from '../theme'
 
-type MinimalButtonProps = ButtonProps & {
+export type MinimalButtonProps = ButtonProps & {
   hoverBg?: string
 }
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { color, fontFamily, fontSize, fontWeight, space, textAlign } from 'styled-system'
-import { ThemeInterface } from '../../themes/ThemeInterface'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { ThemeInterface } from '../theme/ThemeInterface'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 
 const H5 = styled.h5<StyledSystemProps>`
   ${space};

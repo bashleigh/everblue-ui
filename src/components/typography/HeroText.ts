@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { color, fontFamily, fontSize, fontWeight, space, textAlign } from 'styled-system'
-import { ThemeInterface } from '../../themes/ThemeInterface'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { ThemeInterface } from '../theme/ThemeInterface'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 
 const HeroText = styled.h1<StyledSystemProps>`
   ${space};
@@ -19,6 +19,6 @@ const HeroText = styled.h1<StyledSystemProps>`
 export default HeroText
 
 HeroText.defaultProps = {
-  fontSize: 7,
+  fontSize: 5,
   m: 0
 }

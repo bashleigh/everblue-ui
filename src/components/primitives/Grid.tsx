@@ -1,9 +1,14 @@
-import React from 'react'
+import * as React from 'react'
 import { Grid } from 'react-flexbox-grid'
 import styled, { css } from 'styled-components'
-import { ThemeInterface } from '../../themes/ThemeInterface'
+import { ThemeInterface } from '../theme/ThemeInterface'
+import { height, width, space } from 'styled-system'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 
-const StyledGrid = styled(Grid)`
+const StyledGrid = styled(Grid)<StyledSystemProps>`
+  ${height};
+  ${width};
+  ${space};
   ${(props: ThemeInterface) => {
     if (props.theme.gridGutter) {
       return css`
@@ -20,7 +25,11 @@ const StyledGrid = styled(Grid)`
 `
 
 const CustomGrid: React.FC = ({ children, ...rest }) => {
-  return <StyledGrid {...rest}>{children}</StyledGrid>
+  return (
+    <StyledGrid fluid={true} {...rest}>
+      {children}
+    </StyledGrid>
+  )
 }
 
 export default CustomGrid

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 import Button from './Button'
 import styled from 'styled-components'
 import { ButtonProps } from './Button'
@@ -8,7 +8,7 @@ const StyledIconButton = styled(Button)`
   width: auto;
 `
 
-const IconButton: React.FC<ButtonProps> = (props) => {
+const IconButton: React.FC<ButtonProps> = () => {
   return <div>icon button</div>
 }
 

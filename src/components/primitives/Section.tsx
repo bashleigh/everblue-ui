@@ -1,5 +1,6 @@
+import * as React from 'react'
 import styled from 'styled-components'
-import { StyledSystemProps } from '../../themes/StyledSystemProps'
+import { StyledSystemProps } from '../theme/StyledSystemProps'
 import {
   flex,
   order,

@@ -10,9 +10,9 @@ const MODAL_ANIM_CONFIG = {
   friction: 10
 }
 
-type Props = {}
+export type ModalProps = {}
 
-const CustomModal: React.FC<Props> = ({ children }) => {
+const CustomModal: React.FC<ModalProps> = ({ children }) => {
   return (
     <Transition
       items={open}
