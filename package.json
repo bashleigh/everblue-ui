@@ -64,7 +64,6 @@
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-node-resolve": "^5.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-typescript": "^1.0.1",
     "rollup-plugin-typescript2": "^0.21.1",
     "styled-components": "^4.0.3",
     "ts-loader": "^5.3.3",
