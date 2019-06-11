@@ -2,8 +2,18 @@ import * as React from 'react'
 import { Row } from 'react-flexbox-grid'
 import styled, { css } from 'styled-components'
 import { ThemeInterface } from '../theme/ThemeInterface'
+import { SpaceProps, space, ColorProps, color, WidthProps, width } from 'styled-system'
 
-const StyledRow = styled(Row)`
+export type RowProps = SpaceProps &
+  ColorProps &
+  WidthProps & {
+    color?: string
+  }
+
+const StyledRow = styled(Row)<RowProps>`
+  ${space};
+  ${color};
+  ${width};
   ${(props: ThemeInterface) => {
     if (props.theme.gridGutter) {
       return css`
@@ -19,7 +29,7 @@ const StyledRow = styled(Row)`
   }}
 `
 
-const CustomRow: React.FC = ({ children, ...rest }) => {
+const CustomRow: React.FC<RowProps> = ({ children, ...rest }) => {
   return <StyledRow {...rest}>{children}</StyledRow>
 }
 

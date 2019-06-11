@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Transition } from 'react-spring/renderprops'
 
-import { ModalWrap, CustomModalInner } from './Elements'
+import { ModalWrap, CustomModalInner } from './styles'
 
 const MODAL_ANIM_CONFIG = {
   duration: 250,

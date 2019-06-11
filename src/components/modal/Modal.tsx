@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Transition } from 'react-spring/renderprops.cjs'
 
-import { ModalWrap, ModalInner, ModalBodyCont, ModalHeaderCont, CloseButton } from './Elements'
+import { ModalWrap, ModalInner, ModalBodyCont, ModalHeaderCont, CloseButton } from './styles'
 import { H5, P } from '../../../src'
 import { StyledSystemProps } from '../theme/StyledSystemProps'
 
