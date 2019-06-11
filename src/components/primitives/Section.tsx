@@ -35,6 +35,7 @@ const StyledSection = styled.section`
   ${justifyContent};
   display: flex;
   position: relative;
+  box-sizing: border-box;
 `
 
 const Section: React.FC<StyledSystemProps> = ({ children, ...rest }) => (

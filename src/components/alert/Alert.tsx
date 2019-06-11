@@ -2,7 +2,7 @@ import * as React from 'react'
 import Box from '../primitives/Box'
 import { Text } from '../typography'
 import { useTransition } from 'react-spring'
-import { TextCont, StyledAlert, CloseIcon } from './Elements'
+import { TextCont, StyledAlert, CloseIcon } from './styles'
 import { StyledSystemProps } from '../theme/StyledSystemProps'
 
 export type AlertProps = StyledSystemProps & {

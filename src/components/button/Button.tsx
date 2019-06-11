@@ -2,23 +2,23 @@ import * as React from 'react'
 import styled, { css } from 'styled-components'
 import {
   space,
-  width,
   color,
+  width,
+  height,
+  border,
+  display,
+  fontSize,
   minWidth,
   boxShadow,
-  borderRadius,
-  display,
-  border,
-  justifyContent,
   alignItems,
-  height,
-  fontSize
+  borderRadius,
+  justifyContent
 } from 'styled-system'
-import { Text } from '../typography'
 import { theme } from '../theme'
 import { StyledSystemProps } from '../theme/StyledSystemProps'
 import { TextTransformProperty } from 'csstype'
 import { animated } from 'react-spring'
+import { IconProps } from './IconButton'
 
 export type ButtonProps = StyledSystemProps & {
   text?: string
@@ -78,10 +78,10 @@ const StyledButton = styled(animated.button)<StyledSystemProps>`
   }
 `
 
-const Button: React.FC<ButtonProps> = (props) => {
+const Button: React.FC<ButtonProps> = ({ onClick, children, text, ...rest }) => {
   return (
-    <StyledButton onClick={props.onClick} {...props}>
-      {props.text}
+    <StyledButton onClick={onClick} {...rest}>
+      {children || text}
     </StyledButton>
   )
 }
@@ -90,14 +90,14 @@ export default Button
 
 Button.defaultProps = {
   bg: 'blue',
-  text: 'Button',
+  fontSize: 0,
   size: 'medium',
   color: 'white',
+  text: 'Button',
   minWidth: '150px',
   borderRadius: '4px',
   alignItems: 'center',
   onClick: () => false,
   justifyContent: 'center',
-  textTransform: 'uppercase',
-  fontSize: 0
+  textTransform: 'uppercase'
 }

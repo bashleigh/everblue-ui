@@ -20,3 +20,7 @@ const MinimalButton: React.FC<MinimalButtonProps> = (props) => {
 }
 
 export default MinimalButton
+
+MinimalButton.defaultProps = {
+  hoverBg: 'transparentBlack'
+}

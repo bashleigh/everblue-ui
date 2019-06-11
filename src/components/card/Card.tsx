@@ -34,7 +34,6 @@ Card.defaultProps = {
   display: 'flex',
   maxWidth: '100%',
   onClick: () => false,
-  minHeight: '200px',
   borderRadius: '4px',
   boxShadow: theme.baseBoxShadow
 }

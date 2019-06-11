@@ -22,7 +22,8 @@ import {
   SpaceProps,
   TextAlignProps,
   WidthProps,
-  MinHeightProps
+  MinHeightProps,
+  LineHeightProps
 } from 'styled-system'
 
 export type StyledSystemProps = AlignItemsProps &
@@ -49,6 +50,7 @@ export type StyledSystemProps = AlignItemsProps &
   SpaceProps &
   MinHeightProps &
   TextAlignProps &
+  LineHeightProps &
   WidthProps & {
     color?: string
   }

@@ -1,24 +1,36 @@
 import * as React from 'react'
-import { StyledSystemProps } from '../theme/StyledSystemProps'
 import Button from './Button'
 import styled from 'styled-components'
 import { ButtonProps } from './Button'
 
-const StyledIconButton = styled(Button)`
-  width: auto;
+export type IconProps = React.SVGAttributes<SVGElement> & {
+  color?: string
+  size?: string | number
+}
+
+export type IconButtonProps = ButtonProps & {
+  icon: any
+}
+
+const StyledIconButton = styled(Button)<ButtonProps>`
+  min-width: auto;
 `
 
-const IconButton: React.FC<ButtonProps> = () => {
-  return <div>icon button</div>
+const IconButton: React.FC<IconButtonProps> = ({
+  icon: Icon,
+  ...rest
+}: {
+  icon: typeof React.Component
+}) => {
+  return <StyledIconButton {...rest}>{<Icon />}</StyledIconButton>
 }
 
 export default IconButton
 
 IconButton.defaultProps = {
-  bg: 'primary',
   width: 'auto',
   size: 'medium',
   color: 'white',
-  minWidth: 'inherit',
-  onClick: () => false
+  onClick: () => false,
+  bg: 'background.tint1'
 }
